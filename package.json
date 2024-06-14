@@ -1,0 +1,22 @@
+{
+  "name": "playwright-websocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "web": "anywhere 8003",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anywhere": "^1.6.0",
+    "playwright": "^1.44.1",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10"
+  }
+}

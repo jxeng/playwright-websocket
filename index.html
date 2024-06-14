@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>playwright websocket demo</title>
+</head>
+
+<body>
+  <pre id="log"></pre>
+  <script type="text/javascript">
+    function addLog(log) {
+      document.querySelector("#log").textContent = document.querySelector("#log").textContent + "\n" + log
+    }
+    // Create WebSocket connection.
+    const socket = new WebSocket("ws://localhost:8080");
+    // Connection opened
+    socket.addEventListener("open", () => {
+      addLog("Server connected!");
+    });
+    // Listen for messages
+    socket.addEventListener("message", (event) => {
+      addLog("message: " + event.data);
+    });
+    // Connection closed
+    socket.addEventListener("close", () => {
+      addLog("Server closed!");
+    });
+  </script>
+</body>
+
+</html>
